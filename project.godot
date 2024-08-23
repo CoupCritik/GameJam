@@ -14,3 +14,9 @@ config/name="GameJam"
 run/main_scene="res://Scenes/game.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/resizable=false
+window/subwindows/embed_subwindows=false
+window/per_pixel_transparency/allowed=true

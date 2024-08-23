@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://8o7jvqeenhj0"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_rgmxy"]
+[ext_resource type="Script" path="res://Scenes/movement_provider.gd" id="2_t5nh0"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_i8xen"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxpny"]
+size = Vector2(16, 16)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_rgmxy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_i8xen")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yxpny")
+
+[node name="MovementProvider" type="Node" parent="."]
+script = ExtResource("2_t5nh0")
+
+[node name="MovementProviderPlayer" type="Node" parent="."]
