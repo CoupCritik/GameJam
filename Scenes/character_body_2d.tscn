@@ -7,7 +7,6 @@
 size = Vector2(16, 16)
 
 [node name="Character" type="CharacterBody2D"]
-floor_stop_on_slope = false
 floor_snap_length = 2.5
 script = ExtResource("1_2t2iq")
 
@@ -19,3 +18,5 @@ texture = ExtResource("2_wcxm7")
 shape = SubResource("RectangleShape2D_e0wrq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_bottom = 480
