@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://by0l2vmxxbmre"]
+
+[ext_resource type="Script" path="res://Scripts/game.gd" id="1_y76dm"]
+[ext_resource type="PackedScene" uid="uid://bbmhg01d3aiyu" path="res://Scenes/level.tscn" id="4_rey0g"]
+[ext_resource type="PackedScene" uid="uid://bhtxy0npojg1f" path="res://Scenes/character_body_2d.tscn" id="5_c35bt"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_y76dm")
+
+[node name="Character" parent="." instance=ExtResource("5_c35bt")]
+position = Vector2(40, 455)
+
+[node name="Camera2D" type="Camera2D" parent="Character"]
+metadata/_edit_lock_ = true
+
+[node name="Levels" type="Node" parent="."]
+
+[node name="Level1" parent="Levels" instance=ExtResource("4_rey0g")]
+unique_name_in_owner = true
+
+[node name="Level2" parent="Levels" instance=ExtResource("4_rey0g")]
+unique_name_in_owner = true
+visible = false
+
+[node name="TileMap" parent="Levels/Level2" index="0"]
+layer_0/tile_data = PackedInt32Array(1507335, 65536, 2, 1507334, 65536, 2, 1507333, 65536, 2, 1507332, 65536, 2)
+
+[node name="Level3" parent="Levels" instance=ExtResource("4_rey0g")]
+unique_name_in_owner = true
+visible = false
+
+[node name="TileMap" parent="Levels/Level3" index="0"]
+layer_0/tile_data = PackedInt32Array(1507335, 65536, 2, 1507334, 65536, 2, 1507333, 65536, 2, 1507332, 65536, 2)
+
+[editable path="Levels/Level2"]
+[editable path="Levels/Level3"]

@@ -1,33 +1,37 @@
-[gd_scene load_steps=6 format=3 uid="uid://by0l2vmxxbmre"]
+[gd_scene load_steps=3 format=3 uid="uid://by0l2vmxxbmre"]
 
-[ext_resource type="PackedScene" uid="uid://dvbtjj3swfequ" path="res://Scenes/window.tscn" id="1_efkuf"]
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_y76dm"]
-[ext_resource type="Texture2D" uid="uid://dvo2k1gqmh2hn" path="res://icon.svg" id="3_qet1q"]
 [ext_resource type="PackedScene" uid="uid://bbmhg01d3aiyu" path="res://Scenes/level.tscn" id="4_rey0g"]
-[ext_resource type="PackedScene" uid="uid://bhtxy0npojg1f" path="res://Scenes/character_body_2d.tscn" id="5_c35bt"]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node2D"]
+rotation = -0.225147
+skew = -0.588176
 script = ExtResource("1_y76dm")
-main_camera = NodePath("Character/Camera2D")
 
-[node name="Windows" type="Node" parent="."]
+[node name="Levels" type="Node2D" parent="."]
 
-[node name="Window" parent="Windows" instance=ExtResource("1_efkuf")]
-position = Vector2i(50, 50)
-size = Vector2i(400, 400)
-
-[node name="Window2" parent="Windows" instance=ExtResource("1_efkuf")]
+[node name="Level1" parent="Levels" instance=ExtResource("4_rey0g")]
 unique_name_in_owner = true
-auto_translate_mode = 1
-position = Vector2i(450, 50)
-size = Vector2i(450, 450)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(332, 292)
-texture = ExtResource("3_qet1q")
+[node name="Level2" parent="Levels" instance=ExtResource("4_rey0g")]
+unique_name_in_owner = true
+visible = false
+self_modulate = Color(1, 1, 1, 0.196078)
+position = Vector2(-100, -100)
 
-[node name="Level" parent="." instance=ExtResource("4_rey0g")]
+[node name="Character" parent="Levels/Level2" index="1"]
+collision_layer = 2
+collision_mask = 2
 
-[node name="Character" parent="." instance=ExtResource("5_c35bt")]
+[node name="Level3" parent="Levels" instance=ExtResource("4_rey0g")]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-100, -100)
 
-[node name="Camera2D" type="Camera2D" parent="Character"]
+[node name="Character" parent="Levels/Level3" index="1"]
+collision_layer = 2
+collision_mask = 2
+
+[editable path="Levels/Level1"]
+[editable path="Levels/Level2"]
+[editable path="Levels/Level3"]
