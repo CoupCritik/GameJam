@@ -642,13 +642,11 @@ scale = Vector2(0.859375, 0.828125)
 
 [node name="PointLight2D" type="PointLight2D" parent="Lights"]
 position = Vector2(-5.81819, -20.5283)
-scale = Vector2(1, 1)
 color = Color(0, 1, 0, 1)
 texture = SubResource("GradientTexture2D_mj262")
 
 [node name="PointLight2D2" type="PointLight2D" parent="Lights"]
 position = Vector2(161.745, -16.9057)
-scale = Vector2(1, 1)
 color = Color(0, 1, 0, 1)
 texture = SubResource("GradientTexture2D_mj262")
 
@@ -672,7 +670,7 @@ position = Vector2(170, 454)
 
 [node name="Door" parent="Doors" instance=ExtResource("6_mna3u")]
 unique_name_in_owner = true
-position = Vector2(346, 430)
+position = Vector2(344, 432)
 
 [connection signal="activate" from="Keys/Key" to="." method="_on_key_activate"]
 
